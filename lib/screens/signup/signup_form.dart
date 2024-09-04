@@ -19,6 +19,7 @@ class TSignupForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     final controller = Get.put(SignupController());
+    final tccontroller = SignupController.instance;
     return Form(
       key: controller.signupFormKey,
         child: Column(
@@ -86,13 +87,17 @@ class TSignupForm extends StatelessWidget {
         SizedBox(height: TSizes.spaceBtwInputFields),
     
         //password
-        TextFormField(
-          controller: controller.password,
-          validator: (value) => TValidator.validatePassword(value),
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Iconsax.password_check),
-            labelText: TTexts.password,
-            suffixIcon: Icon(Iconsax.eye_slash),
+        Obx(
+          () => TextFormField(
+            controller: controller.password,
+            validator: (value) => TValidator.validatePassword(value),
+            obscureText: controller.hidePassword.value,
+            decoration: InputDecoration(
+              prefixIcon: const Icon(Iconsax.password_check),
+              labelText: TTexts.password,
+              suffixIcon: IconButton(onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+              icon: Icon(controller.hidePassword.value ? Iconsax.eye_slash : Iconsax.eye)),
+            ),
           ),
         ),
         const SizedBox(height: TSizes.spaceBtwSections),
@@ -100,7 +105,11 @@ class TSignupForm extends StatelessWidget {
         //T&C CheckBox
         Row(
           children: [
-            SizedBox(width: 24, height: 24, child: Checkbox(value: true, onChanged: (value) {})),
+            SizedBox(
+              width: 24, height: 24, child: Obx(() => Checkbox(value: controller.privacypolicy.value,
+              onChanged: (value) => controller.privacypolicy.value = !controller.privacypolicy.value)
+              ),
+              ),
             const SizedBox(width: TSizes.spaceBtwItems),
             Text.rich(
               TextSpan(children: [

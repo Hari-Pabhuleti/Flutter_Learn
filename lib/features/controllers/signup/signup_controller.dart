@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fullstack/utils/constants/colors.dart';
+import 'package:fullstack/utils/constants/image_strings.dart';
 import 'package:fullstack/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +21,7 @@ class SignupController extends GetxController {
   Future<void> signup() async {
     try {
 
-    
+    TFullScreenLoader.openLoadingDialog('We are processing your information...', TImages.docerAnimation);
 
     } catch (e) {
 
@@ -46,11 +47,15 @@ class TFullScreenLoader {
           child: Column(
             children: [
               const SizedBox(height: 250),
-              TAnimationLo
+              TAnimationLoaderWidget(text: text, animation: animation),
             ],
           ),
         )
         )
-        )
+        );
+  }
+
+  static stopLoading() {
+    Navigator.of(Get.overlayContext!).pop();
   }
 }

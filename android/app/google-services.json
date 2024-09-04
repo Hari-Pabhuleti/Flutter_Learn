@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "636399033551",
+    "project_id": "flutter-e-commerce-d4e98",
+    "storage_bucket": "flutter-e-commerce-d4e98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636399033551:android:75eb6eeda386c47b74ebba",
+        "android_client_info": {
+          "package_name": "com.ecommerce.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636399033551-k5q878uf1t7v5fu0etd0hrl216vth5ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCigTg17phbsIeC9tOGdQ904CccWqSUZtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636399033551-k5q878uf1t7v5fu0etd0hrl216vth5ca.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "636399033551-5si0rlfcc1d7epdua6i4fnoe42ggbfs2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fullstack"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636399033551:android:e92add7c0073791574ebba",
+        "android_client_info": {
+          "package_name": "com.ecommerec.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636399033551-f6auq2d5f2ko8iopembrledtfm3g68fv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ecommerec.app",
+            "certificate_hash": "e658eb5aedbdb95ef1d5ff7d62336f3d91bd7777"
+          }
+        },
+        {
+          "client_id": "636399033551-k5q878uf1t7v5fu0etd0hrl216vth5ca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCigTg17phbsIeC9tOGdQ904CccWqSUZtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636399033551-k5q878uf1t7v5fu0etd0hrl216vth5ca.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "636399033551-5si0rlfcc1d7epdua6i4fnoe42ggbfs2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fullstack"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

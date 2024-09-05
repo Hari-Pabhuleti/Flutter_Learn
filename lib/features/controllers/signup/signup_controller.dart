@@ -74,13 +74,16 @@ profilePicture: '' ,
     );
 
     final userRepository = Get.put(UserRepository());
-     userRepository.saveUserRecord(newUser);
+    await userRepository.saveUserRecord(newUser);
+
+    // remove loader
+    TFullScreenLoader.stopLoading();
 
   //Show Success Message
   TLoaders.successSnabar(title: 'Congratulation', message: 'Your account has benn created! Verify email to continue');
 
   // Move to verify Email
-  Get.to(() => const VerifyEmailScreen());
+  Get.to(() => VerifyEmailScreen(email: email.text.trim()));
 
   
   //Show the Success message

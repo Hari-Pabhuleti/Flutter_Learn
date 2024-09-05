@@ -1,6 +1,4 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fullstack/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -33,7 +31,7 @@ class UserModel {
 
   //Static functio to generate a username from full anem
   static String generateUsername(fullName) {
-    List<String> nameParts = fullName.split(' ');
+    List<String> nameParts = fullName.split(" ");
     String firstName = nameParts[0].toLowerCase();
     String lastName = nameParts.length > 1 ? nameParts[1].toLowerCase() : "";
 
@@ -61,17 +59,31 @@ class UserModel {
 
   //Factory Method to create a userModel from a firebase document snapshot
   factory UserModel.fromSnapshot(DocumentSnapshot<Map<String, dynamic>> document) {
-    if(document.data() != null) {
-      final data = document.data();
-      return UserModel(
+  if (document.data() != null) {
+    final data = document.data()!;
+    return UserModel(
       id: document.id,
       username: data['UserName'] ?? '',
       email: data['Email'] ?? '',
       firstName: data['FirstName'] ?? '',
       lastName: data['LastName'] ?? '',
       phoneNumber: data['PhoneNumber'] ?? '',
-      profilePicture: data['ProfilePicture'] ?? '')  ;
-    }
-    return ;
+      profilePicture: data['ProfilePicture'] ?? '',
+    );
+  } else {
+    // Option 1: Return a default UserModel with empty fields (if applicable)
+    return UserModel(
+      id: '',
+      username: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      profilePicture: '',
+    );
+
+    // Option 2: Throw an exception to signal missing data (if preferred)
+    // throw Exception('Document data is missing for UserModel creation.');
   }
+}
 }
